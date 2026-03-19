@@ -6,3 +6,4 @@ venv/
 !public/plugins/*.json
 !blog/*.json
 .env
+.claude/skills/
