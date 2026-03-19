@@ -1,0 +1,8 @@
+node_modules/
+venv/
+*.json
+!package.json
+!package-lock.json
+!public/plugins/*.json
+!blog/*.json
+.env

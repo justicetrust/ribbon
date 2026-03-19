@@ -1,0 +1,22 @@
+{
+  "id": "vowel-filter",
+  "name": "Vowel Filter",
+  "author": "Strange Arcade",
+  "description": "AutoFilter sweeping through formant frequencies to create vowel-like vocal tones. Move your hand up and down to sing through your instrument.",
+  "version": "1.0",
+  "nodes": [
+    { "id": "vowelSweep", "type": "AutoFilter", "params": { "frequency": 1.5, "baseFrequency": 800, "octaves": 4, "wet": 0.9 } },
+    { "id": "formantQ", "type": "Filter", "params": { "frequency": 900, "type": "bandpass", "Q": 8, "rolloff": -12 } },
+    { "id": "bodyComp", "type": "Compressor", "params": { "threshold": -18, "ratio": 4, "attack": 0.003, "release": 0.25 } }
+  ],
+  "chain": ["input", "vowelSweep", "formantQ", "bodyComp", "output"],
+  "controls": [
+    { "id": "sweepRate", "target": "vowelSweep.frequency", "label": "Vowel Speed", "type": "slider", "min": 0.1, "max": 8, "default": 1.5 },
+    { "id": "baseFreq", "target": "vowelSweep.baseFrequency", "label": "Vowel Center", "type": "slider", "min": 200, "max": 3200, "default": 800 },
+    { "id": "resonance", "target": "formantQ.Q", "label": "Resonance", "type": "slider", "min": 1, "max": 20, "default": 8 }
+  ],
+  "gestures": [
+    { "source": "hand_y", "target": "formantQ.frequency", "range": [200, 3200] },
+    { "source": "hand_x", "target": "vowelSweep.frequency", "range": [0.1, 8] }
+  ]
+}

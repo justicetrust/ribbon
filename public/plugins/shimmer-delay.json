@@ -1,0 +1,22 @@
+{
+  "id": "shimmer-delay",
+  "name": "Shimmer Delay",
+  "author": "Strange Arcade",
+  "description": "Ethereal delay with pitch shifting and reverb. Creates a shimmering, angelic trail behind every note.",
+  "version": "1.0",
+  "nodes": [
+    { "id": "pitchUp", "type": "PitchShift", "params": { "pitch": 12, "windowSize": 0.1, "delayTime": 0, "feedback": 0 } },
+    { "id": "echo", "type": "FeedbackDelay", "params": { "delayTime": "8n", "feedback": 0.45, "wet": 0.5 } },
+    { "id": "shimmerVerb", "type": "Reverb", "params": { "decay": 4.0, "preDelay": 0.02, "wet": 0.6 } }
+  ],
+  "chain": ["input", "pitchUp", "echo", "shimmerVerb", "output"],
+  "controls": [
+    { "id": "delayTime", "target": "echo.delayTime", "label": "Delay Time", "type": "slider", "min": 0.1, "max": 1.0, "default": 0.375 },
+    { "id": "feedback", "target": "echo.feedback", "label": "Feedback", "type": "slider", "min": 0, "max": 0.85, "default": 0.45 },
+    { "id": "reverbWet", "target": "shimmerVerb.wet", "label": "Shimmer", "type": "slider", "min": 0, "max": 1, "default": 0.6 }
+  ],
+  "gestures": [
+    { "source": "hand_distance", "target": "shimmerVerb.wet", "range": [0, 1] },
+    { "source": "hand_y", "target": "pitchUp.pitch", "range": [0, 24] }
+  ]
+}

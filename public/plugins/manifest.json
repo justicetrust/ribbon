@@ -1,0 +1,64 @@
+{
+  "plugins": [
+    {
+      "id": "shimmer-delay",
+      "name": "Shimmer Delay",
+      "author": "Strange Arcade",
+      "description": "Ethereal delay with pitch shifting and reverb. Creates a shimmering, angelic trail behind every note.",
+      "nodes": [],
+      "chain": [],
+      "controls": [],
+      "gestures": []
+    },
+    {
+      "id": "lo-fi-crunch",
+      "name": "Lo-Fi Crunch",
+      "author": "Strange Arcade",
+      "description": "Bit-crushing and vinyl warmth. Degrades your signal into something beautifully broken.",
+      "nodes": [],
+      "chain": [],
+      "controls": [],
+      "gestures": []
+    },
+    {
+      "id": "space-echo",
+      "name": "Space Echo",
+      "author": "Strange Arcade",
+      "description": "Tape-style echo with wow and flutter. Sends your sound drifting into deep space.",
+      "nodes": [],
+      "chain": [],
+      "controls": [],
+      "gestures": []
+    },
+    {
+      "id": "vowel-filter",
+      "name": "Vowel Filter",
+      "author": "Strange Arcade",
+      "description": "Formant filter that shapes your signal through vocal vowel sounds. Talk through your synth.",
+      "nodes": [],
+      "chain": [],
+      "controls": [],
+      "gestures": []
+    },
+    {
+      "id": "glitch-machine",
+      "name": "Glitch Machine",
+      "author": "Strange Arcade",
+      "description": "Stutter, chop, and mangle. Randomized buffer repeats that fracture time into sharp-edged rhythm.",
+      "nodes": [],
+      "chain": [],
+      "controls": [],
+      "gestures": []
+    },
+    {
+      "id": "ambient-wash",
+      "name": "Ambient Wash",
+      "author": "Strange Arcade",
+      "description": "Slow attack pad layer with long reverb tail. Turns any note into an infinite drone landscape.",
+      "nodes": [],
+      "chain": [],
+      "controls": [],
+      "gestures": []
+    }
+  ]
+}

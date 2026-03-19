@@ -1,0 +1,22 @@
+{
+  "id": "lo-fi-crunch",
+  "name": "Lo-Fi Crunch",
+  "author": "Strange Arcade",
+  "description": "BitCrusher and distortion stack for dirty, degraded lo-fi sound. Hand openness controls how crushed and broken things get.",
+  "version": "1.0",
+  "nodes": [
+    { "id": "crush", "type": "BitCrusher", "params": { "bits": 8 } },
+    { "id": "dirt", "type": "Distortion", "params": { "distortion": 0.3, "wet": 0.7 } },
+    { "id": "lopass", "type": "Filter", "params": { "frequency": 3200, "type": "lowpass", "rolloff": -12 } }
+  ],
+  "chain": ["input", "crush", "dirt", "lopass", "output"],
+  "controls": [
+    { "id": "bits", "target": "crush.bits", "label": "Bit Depth", "type": "slider", "min": 1, "max": 16, "default": 8 },
+    { "id": "drive", "target": "dirt.distortion", "label": "Drive", "type": "slider", "min": 0, "max": 1, "default": 0.3 },
+    { "id": "cutoff", "target": "lopass.frequency", "label": "Lo-Pass Cutoff", "type": "slider", "min": 400, "max": 8000, "default": 3200 }
+  ],
+  "gestures": [
+    { "source": "hand_openness", "target": "crush.bits", "range": [1, 16] },
+    { "source": "hand_openness", "target": "dirt.distortion", "range": [0.8, 0] }
+  ]
+}

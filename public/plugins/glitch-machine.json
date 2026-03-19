@@ -1,0 +1,22 @@
+{
+  "id": "glitch-machine",
+  "name": "Glitch Machine",
+  "author": "Strange Arcade",
+  "description": "Rapid tremolo chopping, bit crushing, and pitch mangling combine into glitchy, unstable textures. Rotate your hand to throw the pitch into chaos.",
+  "version": "1.0",
+  "nodes": [
+    { "id": "chop", "type": "Tremolo", "params": { "frequency": 16, "depth": 0.85, "wet": 0.9 } },
+    { "id": "mangle", "type": "BitCrusher", "params": { "bits": 6 } },
+    { "id": "glitchPitch", "type": "PitchShift", "params": { "pitch": 0, "windowSize": 0.03, "feedback": 0.2, "wet": 0.8 } }
+  ],
+  "chain": ["input", "chop", "mangle", "glitchPitch", "output"],
+  "controls": [
+    { "id": "chopRate", "target": "chop.frequency", "label": "Chop Rate", "type": "slider", "min": 1, "max": 40, "default": 16 },
+    { "id": "crushDepth", "target": "mangle.bits", "label": "Crush", "type": "slider", "min": 1, "max": 12, "default": 6 },
+    { "id": "pitchAmount", "target": "glitchPitch.pitch", "label": "Pitch Throw", "type": "slider", "min": -24, "max": 24, "default": 0 }
+  ],
+  "gestures": [
+    { "source": "hand_rotation", "target": "glitchPitch.pitch", "range": [-24, 24] },
+    { "source": "hand_speed", "target": "chop.frequency", "range": [1, 40] }
+  ]
+}
